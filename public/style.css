@@ -1,0 +1,39 @@
+body{
+    color: rgb(255, 255, 255);
+}
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  text-align-last: center;
+}
+.left {
+  left: 0;
+  width: 210px;
+  background-color: rgb(44, 44, 44);
+  overflow-x: hidden;
+}
+
+.right {
+  right: 0;
+  width: calc(100% - 210px);
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+  background: rgb(44, 44, 44);
+}
+   
+::-webkit-scrollbar-thumb {
+  background: rgb(128, 128, 128); 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(160, 160, 160); 
+}
