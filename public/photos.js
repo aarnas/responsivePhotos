@@ -13,17 +13,16 @@ ajax_get('https://picsum.photos/v2/list?page=2&limit='+lenght, function(data) {
 });
 
 function exportToView(link,width,height,author) {
-    document.getElementById("img-view").innerHTML ="<div id='credits'>Author: "+author+" Width: "+width+" Height: "+height+"</div>";
+    document.getElementById("img-view").innerHTML ="<div id='credit'>Author: "+author+" Width: "+width+" Height: "+height+"</div>";
     var screenW = document.getElementById('pic').clientWidth;
     var screenH = document.getElementById('pic').clientHeight;
-    var hToSet =  screenH-document.getElementById('credits').clientHeight; 
-    var wToSet = screenW;
+    var hToSet =  screenH-document.getElementById('credit').clientHeight; 
     var img = new Image();
     img.src = link;
     img.setAttribute("class", "view-img");
-    if(wToSet>hToSet){
-        if(screenW > screenH && (wToSet/width)*height < screenH){
-            img.setAttribute("width", wToSet);
+    if(screenW>hToSet){
+        if(screenW > screenH && (screenW/width)*height < screenH){
+            img.setAttribute("width", screenW);
         }else{
             img.setAttribute("height", hToSet);
         }
@@ -31,7 +30,7 @@ function exportToView(link,width,height,author) {
         if(screenH > screenW && (hToSet/height)*width < screenW){
             img.setAttribute("height", hToSet);
         }else{
-            img.setAttribute("width", wToSet);
+            img.setAttribute("width", screenW);
         }
     }
     document.getElementById("img-view").append(img);
