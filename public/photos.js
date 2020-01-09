@@ -6,9 +6,7 @@ ajax_get('https://picsum.photos/v2/list?page=2&limit='+lenght, function(data) {
         img.src = data[i].download_url;
         img.setAttribute("class", "banner-img");
         img.setAttribute("onClick", "javascript:exportToView('"+data[i].download_url+"',"+data[i].width+","+data[i].height+",'"+data[i].author+"')");
-        linebreak = document.createElement("br");
         document.getElementById("img-container").appendChild(img);
-        document.getElementById("img-container").appendChild(linebreak);
     }
 });
 
